@@ -1,11 +1,11 @@
 <script setup>
-import HelloWorld from '../components/HelloWorld.vue'
+import HomePage from '../components/HomePage.vue'
 
 
 </script>
 
 <template>
   <main>
-    <HelloWorld msg="You did it!" />
+    <HomePage  />
   </main>
 </template>
