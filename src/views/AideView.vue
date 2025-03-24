@@ -53,7 +53,7 @@
                             <p><b>Troisième étape :</b> Cliquez sur le bouton « Filtrer », mis en évidence en rouge sur
                                 l'image
                                 ci-dessus, pour valider vos filtres et ainsi filtrer les séjours selon vos préférences. </p>
-                        </div>s
+                        </div>
                     </div>
     
                     <div class="accordeon-item">
