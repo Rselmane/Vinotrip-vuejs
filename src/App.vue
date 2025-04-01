@@ -38,6 +38,13 @@ import {
           </RouterLink>
         </li>
         <div class="separator"></div>
+        <li>
+          <RouterLink to="/login">
+            <CircleUserRound size="20" />
+            Login
+          </RouterLink>
+        </li>
+        
       </nav>
     </div>
   </header>

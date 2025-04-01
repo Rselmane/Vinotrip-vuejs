@@ -1,19 +1,13 @@
 <script setup>
-
+import SejoursPage from '../components/SejoursPage.vue';
 
 </script>
 
 
 <template>
-    <div class="getAll">
-        Tout nos sejours ! 
-    </div>
-
     
-  </template>
-  
-  <style>
-  
-  
-  </style>
+<SejoursPage/>
+    
+</template>
+
   

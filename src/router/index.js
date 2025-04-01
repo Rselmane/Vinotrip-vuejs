@@ -1,11 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SejoursView from '@/views/SejoursView.vue'
-import RouteDesVinsView from '@/views/RouteDesVinsView.vue'
+import RouteDesVins from '@/views/RouteDesVins.vue'
 import AideView from '@/views/AideView.vue'
 import MentionsLegalesView from '@/views/legal/MentionsLegalesView.vue'
 import PolitiqueConfidentialiteView from '@/views/legal/PolitiqueConfidentialiteView.vue'
 import ConditionsDeVentesView from '@/views/legal/ConditionsDeVentesView.vue'
+import LoginView from '../views/LoginView.vue'
+import AvisView from '../views/AvisView.vue'
+import SejourView from '@/views/SejourView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,14 +24,29 @@ const router = createRouter({
       component: SejoursView,
     },
     {
+      path: '/sejour/:id',
+      name: 'Sejour',
+      component: SejourView,
+    },
+    {
       path: '/routedesvins',
       name: 'routedesvins',
-      component: RouteDesVinsView,
+      component: RouteDesVins,
     },
     {
       path: '/aide',
       name: 'aide',
       component: AideView,
+    },
+    {
+      path: '/avis',
+      name: 'avis',
+      component: AvisView,
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView,
     },
     {
       path: '/mentions-legales',

@@ -1,7 +1,7 @@
 <script setup>
 import { useSejourStore } from '@/stores/sejours'
 import { Star } from 'lucide-vue-next'
-
+import '../assets/css/welcome.css'
 
 const sejours = useSejourStore()
 defineProps({
@@ -15,10 +15,10 @@ defineProps({
 
 <template>
   <main class="container-sm">
-    <h1>Quelques avis de voyageurs</h1>
+    <h1>Tous les avis</h1>
     <hr id="ligne">
     <section id="avis">
-      <article v-for="sejour in sejours.selection" :key="sejour.idSejour" class="avis">
+      <article v-for="sejour in sejours.selectionavis" :key="sejour.idSejour" class="avis">
         <a class="titre-avis" :href="'/sejour/' + sejour.idsejour">
           {{ sejour.titresejour }}
         </a>
