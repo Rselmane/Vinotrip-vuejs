@@ -31,11 +31,7 @@ export const useClientStore = defineStore('clients', () => {
     motdepasseconnexion: ''
   })
   
-
-
-
-
- 
+  
   const token = ref(localStorage.getItem('token') || null)
  
   const currentUser = ref(JSON.parse(localStorage.getItem('user')) || null)

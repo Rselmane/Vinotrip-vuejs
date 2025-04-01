@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { CircleCheck, CircleX } from 'lucide-vue-next'
 import { useClientStore } from '@/stores/clients'
 import '../assets/css/client/connexion.css'
-
+import { watch,onMounted } from 'vue'
 
 const client = useClientStore();
 const signupForm = client.signupForm
@@ -16,15 +16,59 @@ const loginError = ref(null)
 const showResetPassword = ref(false)
 const resetPasswordEmail = ref('')
 
+// Réinitialiser les erreurs quand le composant est monté
+onMounted(() => {
+  // Réinitialiser toutes les erreurs
+  Object.keys(signupErrors).forEach(key => {
+    signupErrors[key] = null
+  })
+})
+// Réinitialiser toutes les données du formulaire
+
+Object.keys(signupForm
+).forEach(key => {
+    signupErrors[key] = null
+  })
+
+watch(() => signupForm.prenomclient, () => {
+  signupErrors.prenomclient = null;
+});
+
+watch(() => signupForm.nomclient, () => {
+  signupErrors.nomclient = null;
+});
+
+watch(() => signupForm.emailclientconnexion, () => {
+  signupErrors.emailclientconnexion = null;
+});
+
+watch(() => signupForm.telephoneclient, () => {
+  signupErrors.telephoneclient = null;
+});
+
+watch(() => signupForm.motdepasseclient, () => {
+  signupErrors.motdepasseclient = null;
+});
+
+// Pour la date de naissance, vous pouvez surveiller les trois champs
+watch([
+  () => signupForm.journaissance,
+  () => signupForm.moisnaissance,
+  () => signupForm.anneenaissance
+], () => {
+  signupErrors.datenaissanceclient = null;
+});
+
 const handleSignup = () => {
   // Réinitialiser les erreurs
+  
   signupErrors.value = {
-    prenomclient: false,
-    nomclient: false,
-    emailclient: false,
-    motdepasseclient: false,
-    datenaissanceclient: false,
-    telephoneclient: false
+    prenomclient: null,
+    nomclient: null,
+    emailclient: null,
+    motdepasseclient: null,
+    datenaissanceclient: null,
+    telephoneclient: null
   };
   
   // Vérification de la validité du formulaire
